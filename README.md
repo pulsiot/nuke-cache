@@ -43,6 +43,6 @@ jobs:
       steps:
       - uses: pulsiot/nuke-cache@v1
         with:
-          github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           cache-key: ${{ github.sha }}-your-cache-key 
 ```
