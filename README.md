@@ -1,4 +1,4 @@
-# adapttive/cache-delete
+# pulsiot/nuke-cache
 
 ## Setup
 
@@ -19,7 +19,7 @@ jobs:
       steps:
       - name: Cache Build
         id: cache-build
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
           path: ${{ github.workspace }}/your-folder-to-cache
           key: ${{ github.sha }}-your-cache-key
@@ -29,7 +29,7 @@ jobs:
       name: 'deploy'
 
       steps:
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         id: restore-build
         with:
           path: ${{ github.workspace }}/your-folder-to-cache
@@ -41,7 +41,7 @@ jobs:
       name: 'cache cleanup'
 
       steps:
-      - uses: adapttive/cache-delete
+      - uses: pulsiot/nuke-cache@v1
         with:
           github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
           cache-key: ${{ github.sha }}-your-cache-key 
