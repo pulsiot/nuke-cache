@@ -1,8 +1,8 @@
-name: 'adapttive/cache-delete'
+name: 'nuke-cache'
 description: 'Purge Github Actions caches for a repository.'
 branding:
-  icon: 'archive'
-  color: 'orange'
+  icon: 'trash-2'
+  color: 'red'
 inputs:
   github-token:
     description: 'Your GITHUB_TOKEN.'
